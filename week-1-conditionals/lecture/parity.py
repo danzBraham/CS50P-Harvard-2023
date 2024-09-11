@@ -1,12 +1,20 @@
 def main():
-    x = int(input("What's x? "))
-    if (iseven(x)):
+    x = get_int("What's x? ")
+    if is_even(x):
         print("Even")
     else:
         print("Odd")
 
 
-def iseven(n):
+def get_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            pass
+
+
+def is_even(n):
     # You can use this most elegant way in python or any other programming language:
     return n % 2 == 0
 
