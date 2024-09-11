@@ -5,9 +5,12 @@ def main():
 
 def get_number():
     while True:
-        n = int(input("n: "))
-        if n > 0:
-            return n
+        try:
+            n = int(input("n: "))
+            if n > 0:
+                return n
+        except ValueError:
+            pass
 
 
 def print_column(height):
@@ -24,7 +27,7 @@ def print_square(n):
 
     # Method 2
     # for _ in range(n):
-        # print_row(n)
+    # print_row(n)
 
 
 main()

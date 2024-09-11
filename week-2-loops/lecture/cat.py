@@ -22,16 +22,20 @@
 # for _ in range(n):
 #     print("meow")
 
+
 def main():
-    n = get_int()
+    n = get_number()
     meow(n)
 
 
-def get_int():
+def get_number():
     while True:
-        n = int(input("n: "))
-        if n > 0:
-            return n
+        try:
+            n = int(input("n: "))
+            if n > 0:
+                return n
+        except ValueError:
+            pass
 
 
 def meow(n):
