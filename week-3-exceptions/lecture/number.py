@@ -1,9 +1,9 @@
 def main():
-    x = get_int("What's x? ")
+    x = get_integer("What's x? ")
     print(f"x is {x}")
 
 
-def get_int(prompt):
+def get_integer(prompt):
     while True:
         try:
             return int(input(prompt))

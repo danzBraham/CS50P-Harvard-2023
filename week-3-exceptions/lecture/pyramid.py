@@ -1,6 +1,14 @@
 def main():
-    height = int(input("height: "))
+    height = get_int("Height: ")
     pyramid(height)
+
+
+def get_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            pass
 
 
 def pyramid(n):
