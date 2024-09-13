@@ -26,7 +26,7 @@ def gauge(percentage):
     if percentage <= 1:
         return "E"
     # Check if the percentage is greater than or equal to 99
-    elif percentage >= 99:
+    if percentage >= 99:
         return "F"
     # For percentages between 1 and 99
     return f"{percentage}%"
