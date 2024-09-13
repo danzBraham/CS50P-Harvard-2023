@@ -12,6 +12,7 @@ def main():
 #     if square(3) != 9:
 #         print("3 squared was not 9")
 
+
 # Using assert
 def test_square():
     try:
