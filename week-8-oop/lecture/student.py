@@ -3,6 +3,15 @@ class Student:
         self.name = name
         self.city = city
 
+    @classmethod
+    def get(cls):
+        name = input("Name: ").capitalize().strip()
+        city = input("City: ").capitalize().strip()
+        return cls(name, city)
+
+    def greetings(self):
+        return f"Hello i am {self.name}!"
+
     def __str__(self):
         return f"{self.name} from {self.city}"
 
@@ -14,7 +23,7 @@ class Student:
     def name(self, name):
         if not name:
             raise ValueError("Missing name")
-        self._name = name
+        self._name = name.capitalize()
 
     @property
     def city(self):
@@ -22,20 +31,15 @@ class Student:
 
     @city.setter
     def city(self, city):
-        if city not in ["London", "Birmingham", "Manchester", "Paris"]:
-            raise ValueError("Invalid city")
-        self._city = city
-
-    @classmethod
-    def get(cls):
-        name = input("Name: ")
-        city = input("City: ")
-        return cls(name, city)
+        if not city:
+            raise ValueError("Missing city")
+        self._city = city.capitalize()
 
 
 def main():
     student = Student.get()
-    print(student)
+    print(student.name)
+    print(student.city)
 
 
 if __name__ == "__main__":
